@@ -6,7 +6,7 @@ hosts = {
       "vds" = {
          "c1" = {
             name     = "c1",
-            domainname = "talos.hel6.net",
+            domainname = "talos.example.com",
             vcpu     = 4,
             memory   = 1024*8,
             diskpool = "libvirt_cephfs",
@@ -20,7 +20,7 @@ hosts = {
          },
          "w1" = {
             name     = "w1",
-            domainname = "talos.hel6.net",
+            domainname = "talos.example.com",
             vcpu     = 8,
             memory   = 1024*32,
             diskpool = "libvirt_cephfs",
