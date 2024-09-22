@@ -1,5 +1,7 @@
 ** About the terraform and modules **
 
+Many thanks go out to Duncan Mac-Vicar P. for creating the awesome https://github.com/dmacvicar/terraform-provider-libvirt I use.
+
 Using count in terraform can be problematic when taking out resources from the set at a later date
 
 Resource id and references can be lost.
