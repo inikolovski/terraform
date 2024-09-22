@@ -72,7 +72,8 @@ resource "libvirt_domain" "vds" {
     file = "/data/libvirt-ceph/iso/metal-amd64.iso"
   }
 
-  #use the xslt transform on the domain xml to make the created guest q35 and pcie capable
+  # use the xslt transform on the domain xml to make the created guest q35 and pcie capable
+  # keep in mind I've added numad to the kvm host. Setting the cpu placement to auto in the xslt.
   xml {
     xslt = file("${path.module}/ide2sata.xslt")
   }
