@@ -12,7 +12,7 @@ hosts = {
             diskpool = "libvirt_cephfs",
             disksize = 1024*1024*1024*100,
             network_interfaces = {
-               "ens0" = { dhcp4 = false },
+               "ens0" = { dhcp4 = false, mac = "de:ad:be:ef:13:37" },
             },
             network_map = {
                "ens0" = "talos-ext",
@@ -26,7 +26,7 @@ hosts = {
             diskpool = "libvirt_cephfs",
             disksize = 1024*1024*1024*100,
             network_interfaces = {
-               "ens0" = { dhcp4 = false },
+               "ens0" = { dhcp4 = false, mac = "de:ad:be:ef:13:38" },
             },
             network_map = {
                "ens0" = "talos-ext",

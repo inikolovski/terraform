@@ -34,6 +34,7 @@ resource "libvirt_domain" "vds" {
     content {
       hostname       = var.host.name
       network_name   = lookup(var.host.network_map,"${network_interface.key}", "talos-ext")
+      mac = network_interface.value["mac"]
       wait_for_lease = network_interface.value["dhcp4"]
     }
   }
@@ -67,7 +68,10 @@ resource "libvirt_domain" "vds" {
     volume_id = element(libvirt_volume.qcow2_volume.*.id, 1 )
   }
 
-  ## talos iso cdrom mount, should be on host. Alternatively use url.
+  ## talos iso cdrom mount, iso should be placed on host. Alternatively use url.
+  ## best to use factory.talos.dev to create a custom iso with the system extensions you need.
+  ## example: siderolabs/qemu-guest-agent
+  ## (https://github.com/siderolabs/extensions)
   disk {
     file = "/data/libvirt-ceph/iso/metal-amd64.iso"
   }
